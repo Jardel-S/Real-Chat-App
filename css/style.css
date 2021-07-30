@@ -45,6 +45,7 @@ body {
     border-radius: 5px;
     margin-bottom: 15px;
     border: 1px solid #f5c6cb;
+    display: none;
 }
 
 .form form .name-details {
@@ -73,6 +74,11 @@ body {
     top: 70%;
     transform: translateY(-50%);
     cursor: pointer;
+}
+
+.form form .field i.active::before {
+    color: #333;
+    content: "\f070";
 }
 
 .form form .field label {
@@ -185,18 +191,36 @@ body {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.users .search input.active {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .users .search button {
     width: 47px;
     height: 42px;
-    background: #333;
-    color: #fff;
+    background: #fff;
+    color: #333;
     border: none;
     border-radius: 0 5px 5px 0;
     outline: none;
     cursor: pointer;
     font-size: 17px;
+    transition: all 0.2s ease;
+}
+
+.users .search button.active {
+    color: #fff;
+    background: #333;
+}
+
+.users .search button.active i::before {
+    content: "\f00d";
 }
 
 .users-list {
